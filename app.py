@@ -1,16 +1,61 @@
 import streamlit as st
 
-# Page config
+# ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="AI Health FAQ Chatbot",
     page_icon="💬",
     layout="centered"
 )
 
+# ---------------- CUSTOM CSS ----------------
+st.markdown(
+    """
+    <style>
+    /* Background */
+    .stApp {
+        background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Main card */
+    .main-card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        margin-top: 30px;
+    }
+
+    /* Title */
+    h1 {
+        text-align: center;
+        color: #0d47a1;
+    }
+
+    /* Input box */
+    input {
+        border-radius: 10px !important;
+    }
+
+    /* Footer text */
+    .footer {
+        text-align: center;
+        font-size: 13px;
+        color: gray;
+        margin-top: 20px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# ---------------- UI CONTENT ----------------
+st.markdown("<div class='main-card'>", unsafe_allow_html=True)
+
 st.title("🩺 AI Health FAQ Chatbot")
 st.write("Ask simple health-related questions")
 
-# Simple FAQ database
+# FAQ database
 faq = {
     "fever": "Fever is a temporary increase in body temperature. Drink fluids and rest. See a doctor if it lasts more than 2 days.",
     "cold": "Common cold causes runny nose and sneezing. Rest and warm fluids help.",
@@ -35,5 +80,10 @@ if user_input:
     if not found:
         st.warning("Sorry, I can answer only basic health FAQs. Please consult a doctor.")
 
-st.markdown("---")
-st.caption("⚠️ This chatbot provides basic information only. Not a medical diagnosis.")
+st.markdown("</div>", unsafe_allow_html=True)
+
+# Footer
+st.markdown(
+    "<div class='footer'>⚠️ This chatbot provides basic information only. Not a medical diagnosis.</div>",
+    unsafe_allow_html=True
+)

@@ -7,32 +7,40 @@ st.set_page_config(
     layout="centered"
 )
 
-# ---------------- CUSTOM CSS ----------------
+# ---------------- CUSTOM CSS (DARK THEME) ----------------
 st.markdown(
     """
     <style>
     .stApp {
-        background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
         font-family: Arial, sans-serif;
+        color: #e0e0e0;
     }
 
     .card {
-        background-color: white;
+        background-color: #1e1e1e;
         padding: 30px;
         border-radius: 20px;
-        box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+        box-shadow: 0px 8px 25px rgba(0,0,0,0.8);
         margin-top: 40px;
     }
 
     h1 {
         text-align: center;
-        color: #1b5e20;
+        color: #80cbc4;
+    }
+
+    .stTextInput > div > div > input {
+        background-color: #2c2c2c;
+        color: #ffffff;
+        border-radius: 10px;
+        border: 1px solid #555;
     }
 
     .footer {
         text-align: center;
         font-size: 13px;
-        color: gray;
+        color: #b0bec5;
         margin-top: 20px;
     }
     </style>
